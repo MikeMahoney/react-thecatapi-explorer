@@ -1,0 +1,26 @@
+@use '../../_dimensions.scss' as *;
+@use '../../_colors.scss' as *;
+
+.tabs {
+  display: flex;
+  justify-content: space-evenly;
+  height: 30px;
+}
+
+.tab {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-very-small;
+  padding: 0 5px;
+  &--selected {
+    background-color: $color-orange;
+    color: white;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $color-orange;
+    color: white;
+  }
+}
