@@ -2,6 +2,7 @@ import { getCatImagesList } from 'hooks/catApiHooks'
 import './HomeStyles.scss'
 import Images from 'components/layout/Images/Images'
 import ImageItem from 'components/common/ImageItem/ImageItem'
+import { ThreeDots } from 'react-loader-spinner'
 
 interface IHome {}
 
@@ -16,9 +17,16 @@ const Home: React.FC<IHome> = () => {
   return (
     <div className='home'>
       {isCatImagesLoading ? (
-        <h2>{'Loading...'}</h2>
+        <ThreeDots
+          height='80'
+          width='80'
+          radius='9'
+          color='#ff913d'
+          ariaLabel='three-dots-loading'
+          visible={true}
+        />
       ) : !catImagesList.length ? (
-        <h2>{'No cat images have been uploaded :('}</h2>
+        <h2>{'No cat images have been uploaded'}</h2>
       ) : (
         <Images>
           {catImagesList.map((catImage: TCatImage, index: number) => (

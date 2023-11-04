@@ -1,7 +1,8 @@
 @use '../../../_colors.scss' as *;
 
 .home {
-  margin: auto;
+  display: flex;
+  justify-content: center;
   h2 {
     color: $color-orange;
     text-align: center;

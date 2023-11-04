@@ -1,12 +1,5 @@
-import axios from 'axios'
+import { fetchCatImagesList } from 'api/catApi'
 import { useEffect, useState } from 'react'
-
-const AxiosConfig = {
-  headers: {
-    'x-api-key':
-      'live_ixB1L6U96bIHz5h3bBHcFzNlfcOjNAKey1wEf4lK7o8zZ8BuxhwarFYSphXozMsk'
-  }
-}
 
 // Get the list of cat images
 export const getCatImagesList = () => {
@@ -15,8 +8,7 @@ export const getCatImagesList = () => {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   useEffect(() => {
-    axios
-      .get(`https://api.thecatapi.com/v1/images/?limit=10`, AxiosConfig)
+    fetchCatImagesList()
       .then((response) => {
         if (response.data.length) {
           setCatImagesList(response.data)

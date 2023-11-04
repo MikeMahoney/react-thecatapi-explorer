@@ -10,6 +10,7 @@ Project is created with:
 - Axios
 - TheCatAPI API
 - react-hook-form
+- react-toastify
 
 ## Setup
 
