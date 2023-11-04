@@ -1,5 +1,45 @@
 @use '../../../_colors.scss' as *;
 
 .header {
-  font-family: 'SuperSedan';
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 1px solid $color-dark-orange;
+  &__title {
+    display: flex;
+    align-items: center;
+    font-family: 'SuperSedan';
+    color: $color-orange;
+    font-size: 3em;
+    text-decoration: none;
+    svg {
+      height: 48px;
+      path {
+        fill: $color-orange;
+      }
+    }
+  }
+  &__upload-link {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    background-color: $color-orange;
+    width: 75px;
+    height: 25px;
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-weight: 600;
+    svg {
+      height: 20px;
+      path {
+        fill: white;
+      }
+    }
+    &:hover {
+      background-color: $color-dark-orange;
+    }
+  }
 }

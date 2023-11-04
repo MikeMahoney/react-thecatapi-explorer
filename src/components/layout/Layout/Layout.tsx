@@ -8,7 +8,9 @@ const Layout: React.FC<ILayout> = () => {
   return (
     <div className='layout'>
       <Header />
-      <Outlet />
+      <main className='layout__content'>
+        <Outlet />
+      </main>
     </div>
   )
 }

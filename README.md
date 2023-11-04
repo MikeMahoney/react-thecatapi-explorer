@@ -9,6 +9,7 @@ Project is created with:
 - SASS
 - Axios
 - TheCatAPI API
+- react-hook-form
 
 ## Setup
 
@@ -22,3 +23,5 @@ $ npm start
 ```
 
 ## Notes
+
+- For the purpose of this test app the API key is hardcoded but ideally it would be stored in a .ENV file that gets ignored on commit

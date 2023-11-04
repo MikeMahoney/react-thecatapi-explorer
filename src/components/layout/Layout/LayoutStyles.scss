@@ -3,4 +3,8 @@
 .layout {
   display: flex;
   flex-direction: column;
+  height: 100vh;
+  &__content {
+    overflow-y: auto;
+  }
 }

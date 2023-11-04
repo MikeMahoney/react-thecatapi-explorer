@@ -1,0 +1,8 @@
+@use '../../../_colors.scss' as *;
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px;
+}

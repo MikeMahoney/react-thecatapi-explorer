@@ -1,0 +1,53 @@
+@use '../../../_colors.scss' as *;
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 320px;
+  background-color: $color-light-orange;
+  img {
+    max-width: 100%;
+    max-height: 100%;
+    vertical-align: middle;
+  }
+  &__controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 3px;
+    &__score {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        height: 20px;
+        width: 24px;
+        path {
+          fill: white;
+        }
+      }
+      .upvote {
+        display: flex;
+        align-items: center;
+      }
+      .downvote {
+        display: flex;
+        align-items: center;
+        transform: rotate(180deg);
+      }
+    }
+    &__favourite {
+      display: flex;
+      align-items: center;
+      svg {
+        height: 24px;
+        width: 24px;
+        path {
+          fill: white;
+        }
+      }
+    }
+  }
+}

@@ -23,7 +23,6 @@
     "camelcase": "error",
     "spaced-comment": "error",
     "no-duplicate-imports": "error",
-    "@typescript-eslint/no-explicit-any": "off",
     "react/prop-types": "off"
   },
   "settings": {

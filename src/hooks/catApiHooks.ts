@@ -1,7 +1,6 @@
 import axios from 'axios'
 import { useEffect, useState } from 'react'
 
-export const API_KEY: string = 'c1ee94524d8f355300ffdf9489c9f76a'
 const AxiosConfig = {
   headers: {
     'x-api-key':
@@ -17,7 +16,7 @@ export const getCatImagesList = () => {
 
   useEffect(() => {
     axios
-      .get(`https://api.thecatapi.com/v1/images/search?limit=10`, AxiosConfig)
+      .get(`https://api.thecatapi.com/v1/images/?limit=10`, AxiosConfig)
       .then((response) => {
         if (response.data.length) {
           setCatImagesList(response.data)
