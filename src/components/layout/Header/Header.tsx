@@ -13,7 +13,7 @@ const Header: React.FC<IHeader> = () => {
         <PawIcon />
       </Link>
       <Link className='header__upload-link' to={'/upload'}>
-        {'Upload'}
+        <span>{'Upload'}</span>
         <UploadIcon />
       </Link>
     </header>

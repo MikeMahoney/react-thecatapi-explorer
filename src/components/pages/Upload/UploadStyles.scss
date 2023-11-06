@@ -15,6 +15,7 @@
     justify-content: center;
     align-items: center;
     gap: 30px;
+    margin-bottom: 30px;
     input {
       width: 180px;
     }
@@ -40,6 +41,11 @@
       border: 2px solid $color-orange;
       border-radius: 5px;
       padding: 30px;
+      max-width: 320px;
+      img {
+        max-width: 100%;
+        min-width: 100%;
+      }
       svg {
         height: 70px;
         path {

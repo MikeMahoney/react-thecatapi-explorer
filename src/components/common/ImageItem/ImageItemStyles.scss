@@ -4,12 +4,21 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 320px;
+  flex-basis: 22%;
+  min-width: 320px;
+  min-height: 320px;
   background-color: $color-light-orange;
-  img {
-    max-width: 100%;
-    max-height: 100%;
-    vertical-align: middle;
+  border-radius: 3px;
+  padding: 3px;
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   }
   &__controls {
     display: flex;
@@ -31,11 +40,41 @@
       .upvote {
         display: flex;
         align-items: center;
+        &:hover {
+          cursor: pointer;
+          svg {
+            path {
+              fill: $color-green;
+            }
+          }
+        }
+        &--selected {
+          svg {
+            path {
+              fill: $color-green;
+            }
+          }
+        }
       }
       .downvote {
         display: flex;
         align-items: center;
         transform: rotate(180deg);
+        &:hover {
+          cursor: pointer;
+          svg {
+            path {
+              fill: $color-red;
+            }
+          }
+        }
+        &--selected {
+          svg {
+            path {
+              fill: $color-red;
+            }
+          }
+        }
       }
     }
     &__favourite {
@@ -46,6 +85,21 @@
         width: 24px;
         path {
           fill: white;
+        }
+      }
+      &:hover {
+        cursor: pointer;
+        svg {
+          path {
+            fill: $color-pink;
+          }
+        }
+      }
+      &--selected {
+        svg {
+          path {
+            fill: $color-pink;
+          }
         }
       }
     }

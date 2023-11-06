@@ -1,4 +1,5 @@
 @use '../../../_colors.scss' as *;
+@use '../../../_dimensions.scss' as *;
 
 .header {
   display: flex;
@@ -13,6 +14,7 @@
     color: $color-orange;
     font-size: 3em;
     text-decoration: none;
+    margin-right: 20px;
     svg {
       height: 48px;
       path {
@@ -40,6 +42,12 @@
     }
     &:hover {
       background-color: $color-dark-orange;
+    }
+    @media only screen and (max-width: $mobile-width) {
+      width: 25px;
+      span {
+        display: none;
+      }
     }
   }
 }

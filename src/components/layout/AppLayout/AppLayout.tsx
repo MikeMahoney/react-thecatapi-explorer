@@ -1,16 +1,16 @@
-import './LayoutStyles.scss'
+import './AppLayoutStyles.scss'
 import Header from '../Header/Header'
 import { Outlet } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
-interface ILayout {}
+interface IAppLayout {}
 
-const Layout: React.FC<ILayout> = () => {
+const AppLayout: React.FC<IAppLayout> = () => {
   return (
-    <div className='layout'>
+    <div className='app-layout'>
       <Header />
-      <main className='layout__content'>
+      <main className='app-layout__content'>
         <Outlet />
       </main>
       <ToastContainer />
@@ -18,4 +18,4 @@ const Layout: React.FC<ILayout> = () => {
   )
 }
 
-export default Layout
+export default AppLayout

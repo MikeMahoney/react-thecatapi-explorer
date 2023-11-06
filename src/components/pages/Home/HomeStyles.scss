@@ -7,4 +7,30 @@
     color: $color-orange;
     text-align: center;
   }
+  &__images {
+    display: flex;
+    flex-direction: column;
+    &__load-more {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 50px;
+      button {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        color: white;
+        background-color: $color-orange;
+        width: 125px;
+        height: 40px;
+        border-radius: 25px;
+        font-weight: 600;
+        border: none;
+        &:hover {
+          cursor: pointer;
+          background-color: $color-dark-orange;
+        }
+      }
+    }
+  }
 }

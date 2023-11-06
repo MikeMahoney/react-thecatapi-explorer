@@ -2,7 +2,7 @@ import { useState } from 'react'
 import './UploadStyles.scss'
 import { FieldValues, useForm } from 'react-hook-form'
 import { CatIcon } from 'components/common/Icons/CatIcon/CatIcon'
-import { CatImageFileDTO, uploadCatImage } from 'api/catApi'
+import { CatImageUploadDTO, uploadCatImage } from 'api/catApi'
 import { toast } from 'react-toastify'
 import { useNavigate } from 'react-router-dom'
 import { ThreeDots } from 'react-loader-spinner'
@@ -11,13 +11,17 @@ interface IUpload {}
 
 const Upload: React.FC<IUpload> = () => {
   const navigate = useNavigate()
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, reset } = useForm()
   const [isUploading, setIsUploading] = useState<boolean>(false)
   const [imageData, setImageData] = useState<string | null>(null)
 
+  const isImageFile = (file: File) => {
+    return file && file.type.split('/')[0] === 'image'
+  }
+
   const onSubmit = (data: FieldValues) => {
     setIsUploading(true)
-    const imageData: CatImageFileDTO = {
+    const imageData: CatImageUploadDTO = {
       file: data.picture[0]
     }
     uploadCatImage(imageData)
@@ -27,20 +31,30 @@ const Upload: React.FC<IUpload> = () => {
         navigate('/', { replace: true })
       })
       .catch((error) => {
-        toast.error('Error: Image failed to upload')
-        console.log(error)
+        let message = 'Image failed to upload'
+        if (error.response?.data) {
+          message = error.response.data
+        }
+        toast.error(`Error: ${message}`)
         setIsUploading(false)
       })
   }
 
+  // When an image is chosen set it's data for preview
   const onChangeImage = (e: React.FormEvent<HTMLInputElement>) => {
-    if (e.currentTarget?.files && e.currentTarget.files[0]) {
+    const file = e.currentTarget.files ? e.currentTarget.files[0] : null
+    if (!file || !isImageFile(file)) {
+      reset()
+      toast.warning('You must select an image file')
+      return
+    }
+    if (file) {
       const reader = new FileReader()
       reader.addEventListener('load', () => {
         const result = reader.result as string
         setImageData(result)
       })
-      reader.readAsDataURL(e.currentTarget.files[0])
+      reader.readAsDataURL(file)
     }
   }
 
