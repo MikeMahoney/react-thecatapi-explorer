@@ -1,4 +1,5 @@
 @use '../../../_colors.scss' as *;
+@use '../../../_animations.scss';
 
 .image-item {
   display: flex;
@@ -10,11 +11,13 @@
   background-color: $color-light-orange;
   border-radius: 3px;
   padding: 3px;
+  animation: fadeIn 5s;
   &__image {
     display: flex;
     align-items: center;
     justify-content: center;
     flex: 1;
+    background-color: $color-very-light-orange;
     img {
       max-width: 100%;
       max-height: 100%;
@@ -60,6 +63,7 @@
         display: flex;
         align-items: center;
         transform: rotate(180deg);
+        padding-bottom: 3px;
         &:hover {
           cursor: pointer;
           svg {
